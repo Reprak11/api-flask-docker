@@ -17,8 +17,53 @@ def allCountries():
                 #Query alter countries table
                 cursor.execute(insert_countries_table_query)
                 result = cursor.fetchall()
-                [print(row) for row in result]
                 return result
+    except Error as e:
+        print(e)
+        return "Error"
+
+def oneCountry(myvalue):
+    try:
+        with connect(
+            host="localhost",
+            user="root",
+            password=os.getenv('password'),
+            database="list_users"
+        ) as connection:
+            get_countries_table_value_int_query = """
+            SELECT name FROM countries WHERE code=(%s)
+            """
+            get_countries_table_value_string_query = """
+            SELECT code FROM countries WHERE name=(%s)
+            """
+            with connection.cursor() as cursor:
+                #Query alter countries table
+                cursor.execute(get_countries_table_value_int_query,(myvalue,)) if type(myvalue) is int else cursor.execute(get_countries_table_value_string_query,(myvalue,))
+                result = cursor.fetchall()
+                return "Data not found" if result==[] else result[0]
+    except Error as e:
+        print(e)
+        return "Error"
+
+
+def addCountry(myvalue):
+    try:
+        with connect(
+            host="localhost",
+            user="root",
+            password=os.getenv('password'),
+            database="list_users"
+        ) as connection:
+            parmesano = """
+            INSERT INTO countries (name) VALUES (%s)
+            """
+            with connection.cursor() as cursor:
+                if (oneCountry(myvalue) != "Data not found"):
+                    return "Country already in list"
+                #Query alter countries table
+                cursor.execute(parmesano,(myvalue,))
+                connection.commit()
+                return "Country Added" 
     except Error as e:
         print(e)
         return "Error"
