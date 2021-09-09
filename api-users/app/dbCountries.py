@@ -1,4 +1,3 @@
-from getpass import getpass
 from mysql.connector import connect, Error
 import os
 
@@ -44,7 +43,6 @@ def oneCountry(myvalue):
     except Error as e:
         print(e)
         return "Error"
-
 
 def addCountry(myvalue):
     try:
