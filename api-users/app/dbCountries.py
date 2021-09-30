@@ -4,9 +4,10 @@ import os
 def allCountries():
     try:
         with connect(
-            host="localhost",
+            host="mysql",
             user="root",
-            password=os.getenv('password'),
+            port=23306,
+            password="root11",
             database="list_users"
         ) as connection:
             insert_countries_table_query = """
@@ -18,7 +19,6 @@ def allCountries():
                 result = cursor.fetchall()
                 return result
     except Error as e:
-        print(e)
         return "Error"
 
 def oneCountry(myvalue):
