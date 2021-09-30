@@ -19,8 +19,6 @@ services:
       MYSQL_ROOT_HOST: 0.0.0.0
       MYSQL_USER: 'reprak11'
       MYSQL_PASSWORD: 'mypassword'
-    ports: 
-      - 23306:3306
     volumes:
       - ./schemas2:/var/lib/mysql:rw
 volumes:
