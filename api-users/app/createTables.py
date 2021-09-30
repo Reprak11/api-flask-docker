@@ -4,7 +4,7 @@ from mysql.connector import connect, Error
 def createTables():
     try:
         with connect(
-            unix_socket="/var/run/mysqld/mysql.sock",
+            unix_socket="/code/schemas2/sockets/mysqld.sock",
             user="root",
             password="root11",
             database="list_users"

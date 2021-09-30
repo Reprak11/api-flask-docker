@@ -4,7 +4,7 @@ import os
 def allCountries():
     try:
         with connect(
-            unix_socket="/var/run/mysqld/mysql.sock",
+            unix_socket="/code/schemas2/sockets/mysqld.sock",
             user="root",
             password="root11",
             database="list_users"
@@ -23,7 +23,7 @@ def allCountries():
 def oneCountry(myvalue):
     try:
         with connect(
-            unix_socket="/var/run/mysqld/mysql.sock",
+            unix_socket="/code/schemas2/sockets/mysqld.sock",
             user="root",
             password="root11",
             database="list_users"
@@ -46,7 +46,7 @@ def oneCountry(myvalue):
 def addCountry(myvalue):
     try:
         with connect(
-            unix_socket="/var/run/mysqld/mysql.sock",
+            unix_socket="/code/schemas2/sockets/mysqld.sock",
             user="root",
             password="root11",
             database="list_users"
