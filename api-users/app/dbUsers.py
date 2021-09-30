@@ -6,9 +6,9 @@ import datetime
 def addUser(myvalue):
     try:
         with connect(
-            host="localhost",
+            unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password=os.getenv('password'),
+            password="root11"
             database="list_users"
         ) as connection:
             parmesano = """
@@ -29,9 +29,9 @@ def addUser(myvalue):
 def allUsers():
     try:
         with connect(
-            host="localhost",
+            unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password=os.getenv('password'),
+            password="root11"
             database="list_users"
         ) as connection:
             insert_countries_table_query = """
