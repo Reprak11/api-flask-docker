@@ -6,7 +6,7 @@ def createTables():
         with connect(
             unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password="root11"
+            password="root11",
             database="list_users"
         ) as connection:
             create_user_table_query = """

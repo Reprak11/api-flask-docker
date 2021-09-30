@@ -6,7 +6,7 @@ def allCountries():
         with connect(
             unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password="root11"
+            password="root11",
             database="list_users"
         ) as connection:
             insert_countries_table_query = """
@@ -25,7 +25,7 @@ def oneCountry(myvalue):
         with connect(
             unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password="root11"
+            password="root11",
             database="list_users"
         ) as connection:
             get_countries_table_value_int_query = """
@@ -48,7 +48,7 @@ def addCountry(myvalue):
         with connect(
             unix_socket="/var/run/mysqld/mysql.sock",
             user="root",
-            password="root11"
+            password="root11",
             database="list_users"
         ) as connection:
             parmesano = """
