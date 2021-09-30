@@ -3,9 +3,9 @@ from mysql.connector import connect, Error
 
 try:
     with connect(
-        host="localhost",
+        unix_socket="/code/schemas2/sockets/mysqld.sock",
         user="root",
-        password=getpass("Enter password: "),
+        password="root11",
         database="list_users"
     ) as connection:
         show_users_table_query = "DESCRIBE users"

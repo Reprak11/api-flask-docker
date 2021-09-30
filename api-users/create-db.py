@@ -3,9 +3,9 @@ from mysql.connector import connect, Error
 
 try:
     with connect(
-        host="localhost",
-        user=input("Enter username: "),
-        password=getpass("Enter password: ")
+        unix_socket="/code/schemas2/sockets/mysqld.sock",
+        user="root",
+        password="root11",
     ) as connection:
         print(connection)
         create_db_query = "CREATE DATABASE list_users"
