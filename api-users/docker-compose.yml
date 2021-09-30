@@ -21,5 +21,4 @@ services:
       MYSQL_PASSWORD: 'mypassword'
     volumes:
       - ./schemas2:/var/lib/mysql:rw
-volumes:
-  schemas2: {}
+      - ./schemas2/sockets:/var/run/mysqld
