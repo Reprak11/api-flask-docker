@@ -1,8 +1,8 @@
 from flask import request, Blueprint
 from flask_restful import Api, Resource
-from app.dbCountries import allCountries, oneCountry, addCountry
-from app.dbUsers import addUser, allUsers
-from app.createTables import createTables
+from app.sql.dbCountries import allCountries, oneCountry, addCountry
+from app.sql.dbUsers import addUser, allUsers
+from app.sql.createTables import createTables
 
 users_v1_0_bp = Blueprint('users_v1_0_bp', __name__)
 
