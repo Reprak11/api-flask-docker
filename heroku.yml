@@ -1,5 +1,5 @@
 build:
   docker:
-    web: Dockerfile
+    web: api-user/Dockerfile
 run:
-  web: bundle exec puma -C config/puma.rb
+  web: flask run
