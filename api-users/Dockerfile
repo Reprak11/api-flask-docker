@@ -4,6 +4,7 @@ FROM python:3.9-alpine
 WORKDIR /code
 
 ENV FLASK_APP="entrypoint:app"
+ENV FLASK_RUN_HOST=0.0.0.0
 ENV APP_SETTINGS_MODULE="config.default"
 ENV password="root11"
 
@@ -15,4 +16,4 @@ RUN python -m pip install -r requirements.txt
 
 
 COPY . /code
-CMD ["flask", "run", "--port", "3000"]
+CMD python api-users/entrypoint.py
