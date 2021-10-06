@@ -5,6 +5,7 @@ WORKDIR /code
 
 ENV FLASK_APP="entrypoint:app"
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=8000
 ENV APP_SETTINGS_MODULE="config.default"
 ENV password="root11"
 
@@ -13,6 +14,7 @@ RUN apk update && apk add --virtual build-dependencies
 
 COPY requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
+
 
 COPY . /code
 CMD ["flask", "run"]
