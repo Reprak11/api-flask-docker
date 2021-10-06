@@ -4,7 +4,7 @@ FROM python:3.9-alpine
 WORKDIR /code
 
 ENV FLASK_APP="entrypoint:app"
-ENV FLASK_RUN_HOST=0.0.0.0:$PORT
+ENV FLASK_RUN_HOST=0.0.0.0
 ENV APP_SETTINGS_MODULE="config.default"
 ENV password="root11"
 
