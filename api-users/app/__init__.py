@@ -14,6 +14,7 @@ def create_app(settings_module):
     app.register_blueprint(users_v1_0_bp)
     # Registra manejadores de errores personalizados
     register_error_handlers(app)
+    app.port= 80
     return app
 def register_error_handlers(app):
     @app.errorhandler(Exception)
