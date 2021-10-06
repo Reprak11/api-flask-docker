@@ -14,7 +14,5 @@ RUN apk update && apk add --virtual build-dependencies
 COPY requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
 
-EXPOSE $PORT
-
 COPY . /code
 CMD ["flask", "run"]
