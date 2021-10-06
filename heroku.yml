@@ -1,22 +1,5 @@
-web:
-  build: .
-  ports:
-    - "5000:5000"
-  volumes:
-    - .:/code
-  environment: 
-    FLASK_ENV: development
-
-mysql:
-  image: "mysql:5.7"
-  container_name: mysql
-  restart: always
-  environment:
-    MYSQL_ROOT_PASSWORD: 'root11'
-    MYSQL_DATABASE: 'list_users'
-    MYSQL_ROOT_HOST: 0.0.0.0
-    MYSQL_USER: 'reprak11'
-    MYSQL_PASSWORD: 'mypassword'
-  volumes:
-    - ./schemas2:/var/lib/mysql:rw
-    - ./schemas2/sockets:/var/run/mysqld
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: bundle exec puma -C config/puma.rb
