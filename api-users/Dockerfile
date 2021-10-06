@@ -5,7 +5,7 @@ WORKDIR /code
 
 ENV FLASK_APP="entrypoint:app"
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_RUN_PORT=8000
+ENV FLASK_RUN_PORT=$PORT
 ENV APP_SETTINGS_MODULE="config.default"
 ENV password="root11"
 

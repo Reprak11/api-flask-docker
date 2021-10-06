@@ -1,3 +1,5 @@
 build:
   docker:
     web: api-users/Dockerfile
+run:
+  web: flask run
