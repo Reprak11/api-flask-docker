@@ -16,4 +16,4 @@ RUN python -m pip install -r requirements.txt
 
 
 COPY . /code
-CMD python api-users/entrypoint.py
+CMD python entrypoint.py
